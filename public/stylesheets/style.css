@@ -14,3 +14,11 @@ a {
 	font-size: 50px;
 	text-align: center;
 }
+.main_img_wrap {
+	width: 100%;
+	text-align: center;
+}
+.main_img {
+    width: 150px;
+    height: auto;
+}
