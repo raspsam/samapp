@@ -13,12 +13,13 @@ a {
 	width: 100%;
 	font-size: 50px;
 	text-align: center;
+	color: black;
 }
 .main_img_wrap {
 	width: 100%;
 	text-align: center;
 }
 .main_img {
-    width: 150px;
+    width: 300px;
     height: auto;
 }
