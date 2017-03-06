@@ -1,12 +1,4 @@
-<div class="main_img_wrap">
-    <img class="main_img" src="images/robot.jpg" />
-</div>
-<h1>{{name}}</h1>
-<p>This is the {{location}} of {{name}}.</p>
 
-<script src="jquery-2.2.0.min.js"></script>
-
- <script>
  var today = new Date();
  var dd = today.getDate();
  var mm = today.getMonth()+1;
@@ -397,26 +389,3 @@
  	
  };
  app.start();
- </script>
-
- <center>
- <br>
- <b>Hello, my name is <u>Jake Bot.</u></b> 
-  <br>
-  Please, ask me a simple question about someone I know.
-  <br>
- Examples: Samuel, Laurel, Lazarus, Chloe, Noah, Elizabeth, Josh, Peter, You, Me.
-  <br>
-  <br>
-  
- <form id="in" action="">
- <input type="text" value="" style="width: 250px; font-size: 16px; color: orange;" />
- <button >Ask</button>
- <form/>
- 
- <br>
- <br>
- 
- <div id="response" ></div>
- 
- </center>
