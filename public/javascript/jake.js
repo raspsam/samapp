@@ -174,31 +174,31 @@
  	},
  	answer_show: function(rtn, interp){
       if (interp.subject === 'you'){
-        rtn = '<img src="robot.jpg" style="width: 30%">';
+        rtn = '<img src="images/robot.jpg" style="width: 30%">';
       }
       else if (interp.subject === 'lazarus'){
-        rtn = '<img src="dragon.jpg" style="width: 30%">';
+        rtn = '<img src="images/dragon.jpg" style="width: 30%">';
       }
       else if (interp.subject === 'samuel'){
-        rtn = '<img src="samw.jpg" style="height: 30%"> <img src="samw2.jpg" style="height: 30%">';
+        rtn = '<img src="images/samw.jpg" style="height: 30%"> <img src="samw2.jpg" style="height: 30%">';
       }
       else if (interp.subject === 'josh'){
-        rtn = '<img src="josh.jpg" style="width: 30%">';
+        rtn = '<img src="images/josh.jpg" style="width: 30%">';
       }
       else if (interp.subject === 'laurel'){
-        rtn = '<img src="laurel.jpg" style="width: 30%">';
+        rtn = '<img src="images/laurel.jpg" style="width: 30%">';
       }
       else if (interp.subject === 'noah'){
-        rtn = '<img src="noah.jpg" style="width: 30%">';
+        rtn = '<img src="images/noah.jpg" style="width: 30%">';
       }
       else if (interp.subject === 'chloe'){
-        rtn = '<img src="chloe.jpg" style="width: 30%">';
+        rtn = '<img src="images/chloe.jpg" style="width: 30%">';
       }
       else if (interp.subject === 'peter'){
-        rtn = '<img src="peter.jpg" style="width: 30%">';
+        rtn = '<img src="images/peter.jpg" style="width: 30%">';
       }
       else if (interp.subject === 'elizabeth'){
-        rtn = '<img src="elizabeth.jpg" style="width: 30%">';
+        rtn = '<img src="images/elizabeth.jpg" style="width: 30%">';
       }
       else
         rtn = 'Specify who you want me to show you. I cannot distigush with the available information.';
