@@ -46,7 +46,7 @@
   				rtn = 'Samuel is unquestionably the most stubborn person I know. He is my creator, builder, maker, producer, designer, and developer. If you find anything wrong with the way I communicate, please rub it in his face and make him fix it for me.';
  			  }
  			  else 
- 				rtn = rtn + interp.subject + '. (or is it she?)';
+ 				rtn = rtn + interp.subject;
  				
  		return rtn;
  	},
@@ -70,7 +70,7 @@
   				rtn = 'Samuel must go to bed at 8:00 like a good little boy.';
   			}	
   			else
-				rtn = rtn + 'has a bedtime that is highly classified. (or is it she?)';
+				rtn = rtn + 'has a bedtime that is highly classified.';
   				
   		return rtn;
   	},
@@ -134,7 +134,7 @@
  					rtn = rtn + interp.subject + '. You just said the name. Are you trying to trick me?';
  				}
  				else
- 					rtn = rtn + 'a mere human. (or is it she?)';
+ 					rtn = rtn + 'a mere human.';
  		return rtn;
  	},
  	
@@ -151,7 +151,7 @@
  				rtn = 'He is in his gigantic lizard cage. He is lying on a branch several feet above his water tub.';
  			}
  			else
- 				rtn = rtn + 'in an undisclosed, secure location. (or is it she?)';
+ 				rtn = rtn + 'in an undisclosed, secure location.';
  				
  		return rtn;
  	},
@@ -180,7 +180,7 @@
         rtn = '<img src="images/dragon.jpg" style="width: 30%">';
       }
       else if (interp.subject === 'samuel'){
-        rtn = '<img src="images/samw.jpg" style="height: 30%"> <img src="images/samw2.jpg" style="height: 30%">';
+        rtn = '<img src="images/samw.jpg" style="width: 20%"> <img src="images/samw2.jpg" style="width: 10%">';
       }
       else if (interp.subject === 'josh'){
         rtn = '<img src="images/josh.jpg" style="width: 30%">';
