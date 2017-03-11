@@ -180,7 +180,7 @@
         rtn = '<img src="images/dragon.jpg" style="width: 30%">';
       }
       else if (interp.subject === 'samuel'){
-        rtn = '<img src="images/samw.jpg" style="width: 20%"> <img src="images/samw2.jpg" style="width: 10%">';
+        rtn = '<img src="images/samw.jpg" style="width: 30%"> <img src="images/samw2.jpg" style="width: 20%">';
       }
       else if (interp.subject === 'josh'){
         rtn = '<img src="images/josh.jpg" style="width: 30%">';
