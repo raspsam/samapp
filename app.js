@@ -26,6 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Route EACH PAGE
 app.use('/', index);
+app.use('/index', index);
 app.use('/users', users);
 app.use('/sam', sam);
 
