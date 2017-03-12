@@ -9,6 +9,8 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var sam = require('./routes/sam');
+var closet = require('./routes/closet');
+var dragon = require('./routes/dragon');
 
 var app = express();
 
@@ -29,6 +31,8 @@ app.use('/', index);
 app.use('/index', index);
 app.use('/users', users);
 app.use('/sam', sam);
+app.use('/closet', closet);
+app.use('/dragon', dragon);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

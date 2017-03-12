@@ -23,6 +23,10 @@ a {
     width: 300px;
     height: auto;
 }
+.big_pic {
+    width: 600px;
+    height: auto;
+}
 .link {
 	float: left;
 	padding: 10px;
@@ -55,4 +59,27 @@ a {
     height: 120px;
     padding: 10px;
     border: 1px solid black;
+}
+#float3, #float1, #float2 {
+    position: absolute;
+    top: 480px;
+    border: 1px solid black;
+}
+#float3 {
+    left: 2%;
+    width: 31%; 
+    height: 800px;
+    padding: 1px;
+}
+#float1 {
+    left: 34%;
+    width: 32%; 
+    height: 800px;
+    padding: 1px;
+}
+#float2 {
+    left: 67%;
+    width: 32%; 
+    height: 800px;
+    padding: 1px;
 }

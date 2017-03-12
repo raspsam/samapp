@@ -24,5 +24,12 @@ Install PM2
 Clone repo OR sync directory
 ```git clone https://github.com/raspsam/samapp```
 
+Install NPM packages (after changing to working directory)
+```npm install```
+
 Start server
-```pm2 start app.js```
+```pm2 start ./bin/www```
+
+OR FOR VAGRANT:
+```sudo su```
+```pm2 start ./bin/www --watch```

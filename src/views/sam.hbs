@@ -16,7 +16,11 @@
 <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
     <img src="images/torch2.png" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="auto">
     <div id='links' style='display: none;' >
-		<a href="/" >Back</a>
+		<a href="/" >Home</a>
+		<br>
+		<a href="closet" >Closet</a>
+		<br>
+		<a href="dragon" >Lazarus</a>
     </div>
 </div>
 
@@ -25,3 +29,9 @@
 <div id='box'>
      <img src='images/torch.jpg' width='88' height=auto />
 </div>
+
+<img src=images/car.jpg id='i1' style="position:absolute; left: 500; top: 100; height: 50px;">
+<br><br><br><br>
+<input type=button onClick=timer() value='Start'>
+<input type=button onClick=reset1() value='Reset'>
+<div id='msg'></div>
