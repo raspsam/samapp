@@ -4,7 +4,7 @@ var _info = require('./_info.js');
 
 /* GET sam. */
 router.get('/', function(req, res, next) {
-  res.render('sam', _info.person);
+  res.render('sam', _info);
 });
 
 module.exports = router;

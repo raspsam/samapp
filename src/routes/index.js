@@ -4,7 +4,7 @@ var _info = require('./_info.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', _info.person);
+  res.render('index', _info);
 });
 
 module.exports = router;

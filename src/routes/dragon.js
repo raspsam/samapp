@@ -4,7 +4,7 @@ var _info = require('./_info.js');
 
 /* GET dragon. */
 router.get('/', function(req, res, next) {
-  res.render('dragon', _info.person);
+  res.render('dragon', _info);
 });
 
 module.exports = router;

@@ -12,6 +12,7 @@ var sam = require('./routes/sam');
 var closet = require('./routes/closet');
 var dragon = require('./routes/dragon');
 var names = require('./routes/names');
+var result = require('./routes/result');
 
 var app = express();
 
@@ -34,7 +35,8 @@ app.use('/users', users);
 app.use('/sam', sam);
 app.use('/closet', closet);
 app.use('/dragon', dragon);
-app.use('./names', names);
+app.use('/names', names);
+app.use('/result', result);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
