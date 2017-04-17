@@ -1,0 +1,22 @@
+<h1>Pick some foods:</h1>
+
+<table id="pack_table" style="width:100%">
+	<tr style='text-align: left;' class="pack_row" >
+		<th>Quantity: </th>
+		<th>Food </th>
+		<th>Calories </th>
+		<th>Weight (kilograms) </th>
+		<th>Weight (lbs) </th>
+	</tr>
+	{{#each food}}
+	  <tr class="pack_row item_row" id="{{id}}" >
+	  	<td class="pack_quant" >
+	  		<input type="number" step='1' min='0' onChange='clickItem(event)'/>
+			</td>
+	    <td>{{name}}</td>
+	    <td>{{calorie}}</td>
+	    <td>{{weight}}</td>
+	    <td>{{weight_lb}}</td>
+	  </tr>
+		{{/each}}
+</table> 

@@ -83,3 +83,14 @@ a {
     height: 800px;
     padding: 1px;
 }
+
+.pack_row {
+    font-size: 18px;
+    cursor: pointer;
+}
+.pack_row:hover {
+    background-color: #B21700;
+}
+.pack_row.selected {.
+    text-decoration: underline;
+}

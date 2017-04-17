@@ -14,6 +14,7 @@ var dragon = require('./routes/dragon');
 var names = require('./routes/names');
 var result = require('./routes/result');
 var pack = require('./routes/pack');
+var calc = require('./routes/calc');
 
 var app = express();
 
@@ -39,6 +40,7 @@ app.use('/dragon', dragon);
 app.use('/names', names);
 app.use('/result', result);
 app.use('/pack', pack);
+app.use('/calc', calc);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
