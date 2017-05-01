@@ -6,7 +6,7 @@ var _info = require('./_info.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	fs.readFile('names.txt', 'utf8', function (err,data) {
+	fs.readFile('/vagrant_data/names.txt', 'utf8', function (err,data) {
 	  if (err) {
 	  	res.send('There was an error')
 	    return console.log(err);

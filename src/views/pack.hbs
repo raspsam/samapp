@@ -6,7 +6,9 @@
 		<th>Food </th>
 		<th>Calories </th>
 		<th>Weight (kilograms) </th>
-		<th>Weight (lbs) </th>
+		<th>Weight (Lbs) </th>
+		<th>Price </th>
+		<th>Taste </th>
 	</tr>
 	{{#each food}}
 	  <tr class="pack_row item_row" id="{{id}}" >
@@ -17,6 +19,11 @@
 	    <td>{{calorie}}</td>
 	    <td>{{weight}}</td>
 	    <td>{{weight_lb}}</td>
+	    <td>{{price}}</td>
+	    <td>{{taste}}</td>
 	  </tr>
 		{{/each}}
 </table> 
+<br>
+<br>
+<div id='pack_result'><!-- inject goes here --></div>

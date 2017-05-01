@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
       var saveName = "%" + req.query.name;
       console.log("saving name " + saveName + ".");
 
-  		fs.appendFile('names.txt', saveName, function (err) {
+  		fs.appendFile('/vagrant_data/names.txt', saveName, function (err) {
 		  	if (err) throw err;
 		  	console.log('Saved!');
 		  });

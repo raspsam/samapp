@@ -6,7 +6,7 @@ var _food = require('./_food.js');
 _info['food'] = _food.food;
 
 _info.food = _info.food.map(o => {
-	o.weight_lb = Math.round(o.weight * 2.2 * 10) / 10;
+	o.weight_lb = Math.round(o.weight * 2.2 * 100) / 100;
 	return o;
 });
 
