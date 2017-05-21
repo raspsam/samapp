@@ -5,8 +5,11 @@ var _food = require('./_food.js');
 
 _info['food'] = _food.food;
 
+
+
 _info.food = _info.food.map(o => {
 	o.weight_lb = Math.round(o.weight * 2.2 * 100) / 100;
+	o.price = (+o.price).toFixed(2);
 	return o;
 });
 

@@ -1,4 +1,5 @@
 function clickItem(e){
+	e.preventDefault();
 	var thisObject = $(e.target);
 	var thisQuant = thisObject.find('.pack_quant input').val();
 
@@ -29,6 +30,26 @@ function clickItem(e){
 		"</table>";
 		$("#pack_result").html(text);
 	})
+}
+
+function clickRow(e, clickType){
+	var target = $(e.target),
+		row = target.closest("tr");
+	if (target.is("input"))
+		return;
+	var field = row.find(".quantField");
+	
+	if (clickType === 'left'){
+		field.val(+field.val() + 1);
+	}else{
+		e.preventDefault();
+		if (field.val() >= 1){
+			field.val(+field.val() - 1);
+		}
+		
+	}
+
+	field.trigger("change");
 }
 
 function collect(){

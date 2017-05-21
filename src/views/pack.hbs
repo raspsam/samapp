@@ -1,6 +1,6 @@
 <h1>Pick some foods:</h1>
 
-<table id="pack_table" style="width:100%">
+<table class="noselect" id="pack_table" style="width:100%">
 	<tr style='text-align: left;' class="pack_row" >
 		<th>Quantity: </th>
 		<th>Food </th>
@@ -11,9 +11,9 @@
 		<th>Taste </th>
 	</tr>
 	{{#each food}}
-	  <tr class="pack_row item_row" id="{{id}}" >
+	  <tr class="pack_row item_row" id="{{id}}" onClick='clickRow(event, "left")' oncontextmenu='clickRow(event, "right")' >
 	  	<td class="pack_quant" >
-	  		<input type="number" step='1' min='0' onChange='clickItem(event)'/>
+	  		<input class="quantField" type="number" step='1' min='0' onChange='clickItem(event)'/>
 			</td>
 	    <td>{{name}}</td>
 	    <td>{{calorie}}</td>

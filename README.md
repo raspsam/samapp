@@ -38,3 +38,7 @@ SSH into it:
 Start the script:
 ```sudo su```
 ```pm2 start /vagrant_data/bin/www --watch```
+
+
+Restart Wifi
+```sudo systemctl restart network-manager.service```
