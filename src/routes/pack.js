@@ -13,6 +13,8 @@ _info.food = _info.food.map(o => {
 	return o;
 });
 
+_info.hikers = [0,1,2,3,4,5,6,7,8,9];
+
 /* GET sam. */
 router.get('/', function(req, res, next) {
 	console.log("info out:", _info);

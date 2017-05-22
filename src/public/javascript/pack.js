@@ -69,6 +69,24 @@ function collect(){
 	return rtn;
 }
 
+function plusUpDown(updown){
+	var table = $('#pack_table'),
+		allRows = table.find('.pack_row'),
+		titleRow = table.find('.pack_row:first-child'),
+		count = titleRow.find('.quant_cell:not(.force_show)').length -1;
+
+	allRows.each(function(){
+		if (updown === 'up'){
+			$(this).find(".quant_cell:eq(" + (10 - count) + ")").addClass("force_show");
+		}else{
+			$(this).find(".quant_cell:eq(" + (9 - count) + ")").removeClass("force_show");
+		}	
+	});
+	
+	console.log("Count is " + count);
+
+}
+
 function send(collected, callback){
 	$.ajax({
 	  type: "POST",

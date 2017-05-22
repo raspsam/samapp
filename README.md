@@ -42,3 +42,10 @@ Start the script:
 
 Restart Wifi
 ```sudo systemctl restart network-manager.service```
+
+push to github
+
+```git add .```
+```git status```
+```git commit -m 'whatever'```
+```git push```

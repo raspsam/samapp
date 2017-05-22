@@ -24,7 +24,7 @@ function disp(){
 		y= y +step;
 		obj.style.top= y + "px"; // vertical movment
 	}
-	else if(x > 170 ){
+	else if(x > 200 ){
 		x= x -step;
 		obj.style.left= x + "px"; // horizontal movment
 	}
@@ -36,7 +36,7 @@ function disp(){
     if(x == 800){
 		flip(obj, true);
 	}
-	else if(x == 170){
+	else if(x == 200){
 		flip(obj, false);
 	}
 

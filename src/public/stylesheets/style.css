@@ -103,3 +103,36 @@ a {
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
 }
+.pack_row .quant_cell{
+    display:none;
+}
+.pack_row .quant_cell.force_show,
+.pack_row .quant_cell:first-child{
+    display: table-cell;
+}
+.nameField,
+.quantField {
+    width: 75px;
+}
+.nameField {
+    background: transparent;
+    color: white;
+    border: transparent;
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+#plusButton {
+    color: orange;
+    font-size: 28px;
+    border: 2px solid;
+    padding: 3px 10px 7px;
+    display: inline-block;
+}
+#minusButton {
+    color: orange;
+    font-size: 28px;
+    border: 2px solid;
+    padding: 3px 13.5px 7px;
+    display: inline-block;
+}
