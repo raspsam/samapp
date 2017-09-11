@@ -1,6 +1,7 @@
 <h1>Pick some foods:</h1>
 <div id="plusButton" onClick='plusUpDown("up")'>+</div>
 <div id="minusButton" onClick='plusUpDown("down")'>-</div>
+<div id="resetButton" onClick='reset()'>Reset</div>
 <table class="noselect" id="pack_table" style="width:100%">
 	<tr style='text-align: left;' class="pack_row" >
 		{{#each hikers}}
@@ -35,4 +36,6 @@
 
 <br>
 <br>
-<a href="index" >Home</a>
+<div class="link">
+	<a href="index" >Home</a>
+</div>

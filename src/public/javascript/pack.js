@@ -8,28 +8,53 @@ function clickItem(e){
 	else
 		thisObject.removeClass('selected');
 
-	var collected = collect();
-	send(collected, function(res){/////////////////////////////////////////////////////
+	var collected = collect_person();
+	send(collected, function(res){
+
+			/*
+			res = {
+				persons: [{price, etc.}],
+				grand_total: {price,etc}
+			};
+			*/
+
+
 		var text = "<table style='width:100%' >" +
 			"<tr style='text-align: left' >" + 
-				"<th>Total Number</th>" +
+				"<th> </th>" +
+				"<th>Item Total</th>" +
 				"<th>Total Calories</th>" +
 				"<th>Total Weight (kilograms)</th>" +
 				"<th>Total Weight (Lbs)</th>" +
 				"<th>Total Cost</th>" +
 				"<th>Average Taste</th>" +
-			"</tr>" +
-			"<tr>" + 
-				"<td>" + Math.round(res.total) + "</td>" +
-				"<td>" + Math.round(res.calorie) + " KCal</td>" +
-				"<td>" + Math.round(res.weight * 100) / 100 + " kg</td>" +
-				"<td>" + Math.round((res.weight * 2.2) * 100) / 100 + " Lbs</td>" +
-				"<td>$" + Math.round(res.price * 100) / 100 + "</td>" +
-				"<td>" + Math.round(res.taste * 10) / 10 + "</td>" +
-			"</tr>" +
-		"</table>";
+			"</tr>";
+
+		res.persons.map((o,i)  => {
+			text = text + printPerson(o);
+		});
+
+		var text = text + printPerson(res.grand_total);
+
+		var text = text + "</table>";
+
 		$("#pack_result").html(text);
-	})
+	});
+}
+
+function printPerson(res){
+	if(!res.visible)
+		return '';
+	else
+		return "<tr>" + 
+					"<td>" + res.name + "</td>" +
+					"<td>" + Math.round(res.total) + "</td>" +
+					"<td>" + Math.round(res.calorie) + " KCal</td>" +
+					"<td>" + Math.round(res.weight * 100) / 100 + " kg</td>" +
+					"<td>" + Math.round((res.weight * 2.2) * 100) / 100 + " Lbs</td>" +
+					"<td>$" + Math.round(res.price * 100) / 100 + "</td>" +
+					"<td>" + Math.round(res.taste * 10) / 10 + "</td>" +
+				"</tr>";
 }
 
 function clickRow(e, clickType){
@@ -37,7 +62,7 @@ function clickRow(e, clickType){
 		row = target.closest("tr");
 	if (target.is("input"))
 		return;
-	var field = row.find(".quantField");
+	var field = row.find(".pack_quant.force_show,.pack_quant:first").find(".quantField");
 	
 	if (clickType === 'left'){
 		field.val(+field.val() + 1);
@@ -52,7 +77,7 @@ function clickRow(e, clickType){
 	field.trigger("change");
 }
 
-function collect(){
+function collect_food(hikerid){
 	var table = $('#pack_table');
 	var rows = table.find('.item_row');
 
@@ -62,10 +87,39 @@ function collect(){
 		var this_row = $( this );
 		rtn.push({
 	  		id: this_row.attr("id"),
-			quant: this_row.find('.pack_quant input').val()
+			quant: this_row.find(".pack_quant[hikerid='" + hikerid + "']").find('input').val()
 		});
 	});
 
+	return rtn;
+}
+
+function collect_list_person(){
+	var row = $('#pack_table').find('.pack_row').first();
+	var rtn = [];
+	row.find('.quant_cell').each(function(i){
+		var this_item = $(this);
+		rtn.push({
+			name: this_item.find('input').val(),
+			visible: (this_item.is('.force_show') || (i === 0))
+		});
+	});
+	return rtn;
+}
+
+function collect_person(){
+	var table = $('#pack_table');
+	var rows = table.find('.item_row');
+	var rtn = [];
+	var person_list = collect_list_person();
+
+	person_list.map((o, i) => {
+		rtn.push({
+			name: o.name,
+			visible: o.visible,
+			foods: collect_food(i)
+		});
+	});
 	return rtn;
 }
 
@@ -82,9 +136,11 @@ function plusUpDown(updown){
 			$(this).find(".quant_cell:eq(" + (9 - count) + ")").removeClass("force_show");
 		}	
 	});
-	
-	console.log("Count is " + count);
+}
 
+function reset(){
+	$('.quantField').val(0);
+	$("#pack_result").html("");
 }
 
 function send(collected, callback){
@@ -97,3 +153,4 @@ function send(collected, callback){
 	  },
 	});
 }
+

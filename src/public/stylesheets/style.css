@@ -122,17 +122,23 @@ a {
     text-decoration: underline;
 }
 
-#plusButton {
+#plusButton,
+#minusButton {
     color: orange;
     font-size: 28px;
     border: 2px solid;
     padding: 3px 10px 7px;
     display: inline-block;
+    cursor: pointer;
 }
 #minusButton {
-    color: orange;
+    padding: 3px 13.5px 7px;
+}
+#resetButton {
+    color: red;
     font-size: 28px;
     border: 2px solid;
-    padding: 3px 13.5px 7px;
+    padding: 3px 10px 7px;
     display: inline-block;
+    cursor: pointer;
 }

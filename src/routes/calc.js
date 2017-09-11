@@ -18,35 +18,64 @@ function findFood(haystack, needle){
 router.post('/', function(req, res, next) {
 
 	// calculate the result here, using _food above.
-	console.log("BODY::::::", JSON.parse(req.body.data)[0]);
+	console.log("BODY::::::", JSON.parse(req.body.data));
 
 	var list = JSON.parse(req.body.data);
-	var rtn = {
+	var rtnTemplate = () => JSON.parse(JSON.stringify({
 		weight: 0,
 		price: 0,
 		calorie: 0,
 		taste: 0,
 		total: 0,
+		name: "Grand Total",
+		visible: true,
+	}));
+	var rtn = {
+		persons: [],
+		grand_total: rtnTemplate()
 	};
 
-	list.map(o => {
-		rtn.total = rtn.total + +(o.quant || 0);
+	list.map((p, pCount) => {                         //loop on people
 
+		rtn.persons[pCount] = rtnTemplate();
+
+		p.foods.map(o => {						//loop on foods
+
+			console.log('o is ', o);
+
+		
+			var info = findFood(_food.food, o.id);
+
+			// person info
+			rtn.persons[pCount].name = p.name;
+			rtn.persons[pCount].visible = p.visible;
+
+			// Person Total
+			rtn.persons[pCount].total = rtn.persons[pCount].total + +(o.quant || 0);
+
+			rtn.persons[pCount].calorie = rtn.persons[pCount].calorie + +(o.quant * info.calorie);
+			rtn.persons[pCount].weight = rtn.persons[pCount].weight + +(o.quant * info.weight);
+			rtn.persons[pCount].price = rtn.persons[pCount].price + +(o.quant * info.price);
+
+			if(o.quant > 0)
+				rtn.persons[pCount].taste = rtn.persons[pCount].taste + (+info.taste * o.quant);
+
+
+			// Grand Total
+			rtn.grand_total.total = rtn.grand_total.total + +(o.quant || 0);
+
+			rtn.grand_total.calorie = rtn.grand_total.calorie + +(o.quant * info.calorie);
+			rtn.grand_total.weight = rtn.grand_total.weight + +(o.quant * info.weight);
+			rtn.grand_total.price = rtn.grand_total.price + +(o.quant * info.price);
+
+			if(o.quant > 0)
+				rtn.grand_total.taste = rtn.grand_total.taste + (+info.taste * o.quant);
+		});
+	})
 	
-		var info = findFood(_food.food, o.id);
 
-		// Calories
-		rtn.calorie = rtn.calorie + +(o.quant * info.calorie);
-		rtn.weight = rtn.weight + +(o.quant * info.weight);
-		rtn.price = rtn.price + +(o.quant * info.price);
-
-		if(o.quant > 0)
-			rtn.taste = rtn.taste + (+info.taste * o.quant);
-
-	});
-
-	if(rtn.total > 0)
-		rtn.taste = rtn.taste / rtn.total;
+	if(rtn.grand_total.total > 0)
+		rtn.grand_total.taste = rtn.grand_total.taste / rtn.grand_total.total;
 
   	res.send(rtn);
 });
