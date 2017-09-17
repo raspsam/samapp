@@ -72,6 +72,30 @@ exports.food = [
 		weight: '.071', //kilograms
 		price: '0.83',
 		taste: '4',
+	},
+	{
+		id: 'water',
+		name: 'Water (1 liter)',
+		calorie: '0',
+		weight: '1',
+		price: '0',
+		taste: '5',
+	},
+	{
+		id: 'packet',
+		name: 'Condiment Packet',
+		calorie: '13',
+		weight: '0.01',
+		price: '0.1',
+		taste: '3',
+	},
+	{
+		id: 'nuts',
+		name: 'Walnuts 1/4th Cup',
+		calorie: '200',
+		weight: '0.03',
+		price: '0.4',
+		taste: '5',
 	}
 
 ];
