@@ -45,6 +45,9 @@
   			else if (interp.subject === 'samuel'){
   				rtn = 'Samuel is unquestionably the most stubborn person I know. He is my creator, builder, maker, producer, designer, and developer. If you find anything wrong with the way I communicate, please rub it in his face and make him fix it for me.';
  			  }
+        else if (interp.subject === 'thad'){
+          rtn = 'Thad is the young teenager responsable for countless accidents. He has also added an uncountable number of nonsese words to the dictionary.'
+        }
  			  else 
  				rtn = rtn + interp.subject;
  				
@@ -200,6 +203,9 @@
       else if (interp.subject === 'elizabeth'){
         rtn = '<img src="images/elizabeth.jpg" style="width: 30%">';
       }
+      else if (interp.subject === 'thad'){
+        rtn = '<img src="images/thad.jpg" style="width: 30%">';
+      }
       else
         rtn = 'Specify who you want me to show you. I cannot distigush with the available information.';
         
@@ -249,6 +255,13 @@
  				else
  					rtn = 'I am sure ' + interp.subject + ' is doing just fine.';
  			}
+      else if (interp.subject === 'thad'){
+        if (interp.extra === 'old'){
+          rtn = 'He is 14.';
+        }
+        else
+          rtn = 'I am sure ' + interp.subject + ' is doing just fine.';
+      }
  			else if (interp.subject === 'elizabeth'){
  				if (interp.extra === 'old'){
  					rtn = 'She is about to turn 40.';
@@ -361,7 +374,7 @@
   		},
   		def = {
 			question: ['who', 'what', 'when', 'where', 'why', 'how', 'can', 'do', 'show'],
-  			subject: ['you', 'i', 'samuel', 'my', 'laurel', 'josh', 'noah', 'chloe', 'elizabeth', 'peter', 'lazarus', 'your', 'date', 'dragon'],
+  			subject: ['you', 'i', 'thad', 'samuel', 'my', 'laurel', 'josh', 'noah', 'chloe', 'elizabeth', 'peter', 'lazarus', 'your', 'date', 'dragon'],
   			female: ['chloe', 'elizabeth', 'laurel'],
  			extra: ['wearing', 'firetrucks', 'food', 'name', 'bedtime', 'orange', 'old', 'hello', 'hi', 'are', 'want', 'have', 'bother'],
   			contradiction: ['not']
